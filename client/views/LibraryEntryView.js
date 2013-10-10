@@ -3,11 +3,9 @@ var LibraryEntryView = Backbone.View.extend({
 
   tagName: 'li',
   className: 'libraryEntry',
+  template: _.template('<span class="song-artist"><%= artist %>  </span><span class="song-title"><%= title %></span>'),
+  //template: _.template($('#libraryViewTemplate').html()),
 
-  template: _.template($('#libraryViewTemplate').html()),
-  initialize: function() {
-    console.log('test');
-  }
   events: {
     'click': function() {
       this.model.enqueue();
@@ -15,7 +13,8 @@ var LibraryEntryView = Backbone.View.extend({
   },
 
   render: function(){
-    return this.$el.html(this.template(this.model.toJSON()));
+    return this.$el.html(this.template(this.model.attributes));
+//    return this.$el.html(this.template(this.model.toJSON()));
   }
 
 });
