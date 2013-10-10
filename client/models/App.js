@@ -2,6 +2,7 @@
 var App = Backbone.Model.extend({
 
   initialize: function(params){
+    var that = this;
     this.set('currentSong', new Song());
     this.set('songQueue', new SongQueue());
 
@@ -12,6 +13,10 @@ var App = Backbone.Model.extend({
     params.library.on('play', function(song){
       this.set('currentSong', song);
     }, this);
+
+    params.library.on('removeMe', function(song){
+      that.get('songQueue').remove(song);
+    });
   }
 
 });

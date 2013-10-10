@@ -30,6 +30,6 @@ describe("LibraryView", function() {
   it("should have a header element after being rendered", function(){
     expect(view.$el.children().length).toBe(0);
     view.render();
-    expect(view.$el.children()[0].tagName).toBe('TH');
+    expect(view.el.tagName).toBe('UL');
   });
 });

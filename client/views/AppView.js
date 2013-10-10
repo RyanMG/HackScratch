@@ -10,8 +10,10 @@ var AppView = Backbone.View.extend({
     }, this);
 
     this.playerView.$el.on('ended', function() {
-      this.currentTime = 0;
       that.model.get('currentSong').ended();
+      if (this.currentTime){
+        this.currentTime = 0;
+      }
     });
 
   },
