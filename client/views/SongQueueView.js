@@ -4,8 +4,10 @@ var SongQueueView = Backbone.View.extend({
   tagName: "table",
 
   initialize: function() {
-    _.bindAll(this, 'render'); // fixes loss of context for 'this' within methods
-    this.collection.bind('add', this.render );
+    // Not sure why _.bindAll is breaking the test?
+//    _.bindAll(this, 'render'); // fixes loss of context for 'this' within methods
+    this.collection.bind('add', this.render.bind(this) );
+    this.collection.bind('remove', this.render.bind(this) );
   },
 
   render: function() {

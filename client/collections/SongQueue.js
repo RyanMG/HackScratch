@@ -13,8 +13,7 @@ var SongQueue = Songs.extend({
     });
 
     this.on('ended', function(song){
-      // why will destory work and not remove?
-      this.first().destroy();
+      this.shift();
       if (this.length > 0) {
         this.playFirst();
       }
