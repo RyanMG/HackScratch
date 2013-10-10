@@ -1,0 +1,82 @@
+/* styles.css */
+
+* { outline:none;}
+
+body {
+  background-color:#29A3A3;
+}
+
+h1 {
+  margin-top:-80px;
+  text-align: center;
+  font-size:60px;
+  color: rgba(32,101, 102, 0.8);
+  text-shadow: 1px 4px 6px #29A3A3, 0 0 0 #000, 1px 4px 6px #29A3A3;
+}
+#record-player {
+  position: absolute;
+  height: 600px;
+  width: 850px;
+  border: 3px solid #555;
+  border-radius: 30px;
+  background-color: #ddd;
+  top:50%;
+  left:50%;
+  margin-top:-300px;
+  margin-left:-400px;
+  box-shadow: inset 0px 0px 30px #666;
+}
+  #seven-inch {
+    position:relative;
+    float:right;
+    height: 525px;
+    width: 525px;
+    margin-top:-270px;
+    margin-right: -140px;
+    background-image: url('../images/record.svg');
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+h2 {
+  color:#fff;
+  text-align: center;
+  font-size:30px;
+  letter-spacing: 3px;
+  margin: 0 0 0 0;
+  background-color: #333;
+  padding: 7px 0 5px 0;
+  border-bottom: 1px solid #000;
+}
+#needle {
+  float:right;
+  margin-right:-100px;
+  margin-top:-220px;
+  background-image: url('../images/needle.svg');
+  height:550px;
+  width: 300px;
+  background-position: center center;
+  background-size: cover;
+}
+#library, #playlist {
+  height:260px;
+  width:200px;
+  clear:left;
+  float:left;
+  margin-bottom:20px;
+  border: 3px solid #29A3A3;
+  border-radius: 10px;
+  margin-left:30px;
+  background-color: #666;
+  box-shadow: inset 0 0 15px #000;
+  overflow: hidden;
+}
+.list {
+  width: 170px;
+  height: 185px;
+  background-color: #ddd;
+  margin:5px auto;
+  padding:5px;
+  border: 1px solid #000;
+}

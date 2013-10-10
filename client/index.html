@@ -2,37 +2,22 @@
 <html>
   <head>
   </head>
-  <body>
+    <link rel="stylesheet" href="bower_components/normalize-css/normalize.css">
+    <link rel="stylesheet" href="css/styles.css">
     <script src="bower_components/jquery/jquery.min.js"></script>
     <script src="bower_components/underscore/underscore.js"></script>
     <script src="bower_components/backbone/backbone.js"></script>
-
     <script src="data/data.js"></script>
-    <!-- array of objects, each represening a song and its data -->
 
     <script src="models/Song.js"></script>
-    <!-- Model for a single song, which has a play method: triggers 'play'? -->
     <script src="collections/Songs.js"></script>
-    <!-- Collection to contain the song models -->
     <script src="collections/SongQueue.js"></script>
-    <!-- extends the Songs collection to add a song to the playlist queue -->
 
     <script src="models/App.js"></script>
-    <!-- A model that contains the whole app: sets properies for the current
-      playing song, as well as the queue of songs. Not sure what params.library.on
-      does: assume it uses a song's play method to change the currentSong? -->
     <script src="views/PlayerView.js"></script>
-    <!-- builds the player: adds an HTML5 audio tag, and sets its SRC to the
-      url of a song -->
     <script src="views/LibraryView.js"></script>
-    <!-- Builds a list of songs in the library to an HTML table -->
     <script src="views/LibraryEntryView.js"></script>
-    <!-- builds a view for a single song in the LibraryView, which accepts clicks
-      to play the selected song. Returns its rendered view to the LibraryView -->
     <script src="views/AppView.js"></script>
-    <!-- view class for the whole app: builds the playerview based on the current
-      song from the library. When you select a new song, it tells the playerview
-      to call the setSong method to change the current song. Renders the player and library to the app view. -->
     <script src="views/SongQueueView.js"></script>
     <script src="views/SongQueueEntryView.js"></script>
     <script>
@@ -45,8 +30,26 @@
         var appView = new AppView({model: app});
 
         // put the view onto the screen
-        $('body').append(appView.render());
+        $('#player').append(appView.render());
       });
     </script>
+  <body>
+
+    <div id="record-player">
+      <h1>HackScratch</h1>
+      <div id="library">
+        <h2>Library</h2>
+        <div class="list">
+        </div>
+      </div>
+      <div id="playlist">
+        <h2>Playlist</h2>
+        <div class="list">
+        </div>
+      </div>
+      <div id="play-contols"></div>
+      <div id="needle"></div>
+      <div id="seven-inch"></div>
+    </div>
   </body>
 </html>

@@ -1,6 +1,6 @@
 // SongQueue.js - Defines a backbone model class for the song queue.
 var SongQueue = Songs.extend({
-
+  // How do we add a single model to a collection multiple times?
   initialize: function(){
     this.on('add', function() {
       if (this.length === 1) {
