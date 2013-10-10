@@ -4,7 +4,9 @@ var SongQueue = Songs.extend({
   initialize: function(){
     this.on('add', function() {
       if (this.length === 1) {
+        $('#seven-inch > img').addClass('isPlaying');
         this.playFirst();
+
       }
     });
 
@@ -16,6 +18,8 @@ var SongQueue = Songs.extend({
       this.shift();
       if (this.length > 0) {
         this.playFirst();
+      } else {
+        $('#seven-inch > img').removeClass('isPlaying');
       }
     });
   },
