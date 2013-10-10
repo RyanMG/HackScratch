@@ -2,7 +2,14 @@
 var SongQueue = Songs.extend({
   // How do we add a single model to a collection multiple times?
   initialize: function(){
+    if (window.localStorage.getItem('playQueue') !== undefined) {
+      window.localStorage.setItem('playQueue', {});
+    }
+    playQueue = window.localStorage.getItem('playQueue');
+
     this.on('add', function() {
+      //window.localStorage.setItem(['playQueue'].queueList.push(this.first());
+      console.log(window.localStorage);
       if (this.length === 1) {
         this.playFirst();
       }
@@ -13,6 +20,8 @@ var SongQueue = Songs.extend({
     });
 
     this.on('ended', function(song){
+      window.localStorage['playQueue'].queueList.shift();
+      console.log(window.localStorage);
       this.shift();
       if (this.length > 0) {
         this.playFirst();

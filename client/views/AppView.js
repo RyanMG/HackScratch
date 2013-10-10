@@ -14,6 +14,7 @@ var AppView = Backbone.View.extend({
       if (this.currentTime){
         this.currentTime = 0;
       }
+      libraryView.render();
     });
 
   },

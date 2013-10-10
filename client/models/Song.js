@@ -15,6 +15,11 @@ var Song = Backbone.Model.extend({
   },
 
   ended: function() {
+    var played = this.get('played');
+    played++;
+    this.set('played', played);
+    console.log(this.attributes);
+
     this.trigger('ended', this);
   },
 

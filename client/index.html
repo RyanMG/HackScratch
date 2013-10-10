@@ -4,6 +4,13 @@
   </head>
     <link rel="stylesheet" href="bower_components/normalize-css/normalize.css">
     <link rel="stylesheet" href="css/styles.css">
+    <script id="libraryViewTemplate" type="text/template">
+       <span class="song-artist"><%= artist %>  </span>
+       <span class="song-title"><%= title %></span>
+     <div class="playCount">
+        <p><%= played %></p>
+      </div>
+    </script>
     <script src="bower_components/jquery/jquery.min.js"></script>
     <script src="bower_components/underscore/underscore.js"></script>
     <script src="bower_components/backbone/backbone.js"></script>
@@ -23,6 +30,7 @@
     <script>
       $(function(){
         // set up model objects
+        console.log(window.localStorage);
         var library = new Songs(songData);
         var app = new App({library: library});
 
@@ -58,5 +66,6 @@
         <img src="images/record.svg" />
       </div>
     </div>
+
   </body>
 </html>
