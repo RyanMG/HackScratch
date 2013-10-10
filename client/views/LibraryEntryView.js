@@ -5,7 +5,9 @@ var LibraryEntryView = Backbone.View.extend({
   className: 'libraryEntry',
 
   template: _.template($('#libraryViewTemplate').html()),
-
+  initialize: function() {
+    console.log('test');
+  }
   events: {
     'click': function() {
       this.model.enqueue();
