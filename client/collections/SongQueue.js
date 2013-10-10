@@ -2,16 +2,21 @@
 var SongQueue = Songs.extend({
 
   initialize: function(){
-    this.queue = [];
+    this.on('add', function() {
+      if (this.length === 1) {
+        this.playFirst();
+      }
+    });
+
+    this.on('ended', function(){
+      this.first().destroy();
+      this.playFirst();
+    });
   },
-  enqueue: function(song){
-    //add a song to the playlist queue
-  },
-  dequeue: function(song) {
-    // remove a song once it is playing
-  },
-  removeSong: function(song) {
-    // remove a song from the list before it has been played
+
+  playFirst: function(){
+    this.first().play();
   }
+
 
 });

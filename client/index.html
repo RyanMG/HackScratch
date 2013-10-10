@@ -1,6 +1,3 @@
-<!-- All Ages: Put on shows by adding a headlining band and openers,
-  and building playlists for them. Builds a view that builds a flyer
-  for the 'show', and setlists when you click a band -->
 <!DOCTYPE html>
 <html>
   <head>
@@ -18,10 +15,10 @@
     <script src="collections/Songs.js"></script>
     <!-- Collection to contain the song models -->
     <script src="collections/SongQueue.js"></script>
-    <!-- extends the Songs collection to ???? -->
+    <!-- extends the Songs collection to add a song to the playlist queue -->
 
     <script src="models/App.js"></script>
-    <!-- A model that contains the whole app: sets properies for the current 
+    <!-- A model that contains the whole app: sets properies for the current
       playing song, as well as the queue of songs. Not sure what params.library.on
       does: assume it uses a song's play method to change the currentSong? -->
     <script src="views/PlayerView.js"></script>
@@ -36,6 +33,8 @@
     <!-- view class for the whole app: builds the playerview based on the current
       song from the library. When you select a new song, it tells the playerview
       to call the setSong method to change the current song. Renders the player and library to the app view. -->
+    <script src="views/SongQueueView.js"></script>
+    <script src="views/SongQueueEntryView.js"></script>
     <script>
       $(function(){
         // set up model objects
