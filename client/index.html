@@ -28,28 +28,35 @@
 
         // build a view for the top level of the whole app
         var appView = new AppView({model: app});
+        var libraryView = new LibraryView({collection: app.get('library')});
+        var songQueueView = new SongQueueView({ collection: app.get('songQueue')})
 
         // put the view onto the screen
-        $('#player').append(appView.render());
+        $('#play-controls').append(appView.render());
+        $('#library-holder').append(libraryView.render());
+        $('#playlist-holder').append(songQueueView.render());
       });
     </script>
   <body>
 
     <div id="record-player">
       <h1>HackScratch</h1>
+      <div id="play-controls"></div>
+
       <div id="library">
         <h2>Library</h2>
-        <div class="list">
+        <div id="library-holder" class="list">
         </div>
       </div>
       <div id="playlist">
         <h2>Playlist</h2>
-        <div class="list">
+        <div id="playlist-holder" class="list">
         </div>
       </div>
-      <div id="play-contols"></div>
       <div id="needle"></div>
-      <div id="seven-inch"></div>
+      <div id="seven-inch">
+        <img src="images/record.svg" />
+      </div>
     </div>
   </body>
 </html>

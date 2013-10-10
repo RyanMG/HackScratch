@@ -7,15 +7,16 @@ body {
 }
 
 h1 {
-  margin-top:-80px;
+  margin-top:-75px;
   text-align: center;
   font-size:60px;
   color: rgba(32,101, 102, 0.8);
   text-shadow: 1px 4px 6px #29A3A3, 0 0 0 #000, 1px 4px 6px #29A3A3;
 }
+
 #record-player {
   position: absolute;
-  height: 600px;
+  height: 620px;
   width: 850px;
   border: 3px solid #555;
   border-radius: 30px;
@@ -26,18 +27,51 @@ h1 {
   margin-left:-400px;
   box-shadow: inset 0px 0px 30px #666;
 }
-  #seven-inch {
-    position:relative;
-    float:right;
-    height: 525px;
-    width: 525px;
-    margin-top:-270px;
-    margin-right: -140px;
-    background-image: url('../images/record.svg');
-    background-size: contain;
-    background-position: center center;
-    background-repeat: no-repeat;
-  }
+#seven-inch {
+  position:relative;
+  overflow:;
+  margin-left:250px;
+  height: 525px;
+  width: 525px;
+  margin-top:80px;
+ }
+ #seven-inch img {
+  height: 525px;
+  width:525px;
+  -webkit-animation:spin 4s linear infinite;
+  -moz-animation:spin 4s linear infinite;
+  animation:spin 4s linear infinite;
+}
+
+@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+
+
+#needle {
+  float:right;
+  margin-right:-55px;
+  margin-top:-215px;
+  background-image: url('../images/needle.svg');
+  height:500px;
+  width: 300px;
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#play-controls {
+  float:right;
+  margin-right:37px;
+  width: 550px;
+  height: 50px;
+
+}
+audio {
+  padding-top:5px;
+  height: 30px;
+  width:550px;
+}
 
 h2 {
   color:#fff;
@@ -49,16 +83,7 @@ h2 {
   padding: 7px 0 5px 0;
   border-bottom: 1px solid #000;
 }
-#needle {
-  float:right;
-  margin-right:-100px;
-  margin-top:-220px;
-  background-image: url('../images/needle.svg');
-  height:550px;
-  width: 300px;
-  background-position: center center;
-  background-size: cover;
-}
+
 #library, #playlist {
   height:260px;
   width:200px;
@@ -73,10 +98,33 @@ h2 {
   overflow: hidden;
 }
 .list {
+  font-size:12px;
+  cursor:pointer;
   width: 170px;
   height: 185px;
   background-color: #ddd;
   margin:5px auto;
   padding:5px;
   border: 1px solid #000;
+}
+
+#library-holder ul, #playlist-holder ul{
+  padding: 0;
+  margin: 0;
+}
+#library-holder ul li, #playlist-holder ul li {
+  list-style: none;
+  padding-bottom: 6px;
+  padding-top:5px;
+  border-bottom:1px solid #000;
+} 
+#library-holder ul li:nth-child(even){
+  background-color: #eee;
+}
+.song-artist {
+  font-style: italic;
+}
+.song-title {
+  font-weight: 700
+
 }
