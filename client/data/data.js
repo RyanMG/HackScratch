@@ -1,27 +1,39 @@
 // data.js - Defines an array of data regarding song files and their accompanying details.
 var songData = [
   {
-    url: "https://s3-us-west-1.amazonaws.com/hr-mytunes/data/04+One+In+A+Million.mp3",
-    title: "One In A Million",
-    artist: "Aaliyah",
+    url: "http://www.mercygaming.com/temp/MoveSomethin.mp3",
+    title: "Move Somethin'",
+    artist: "Talib Kwelei",
     played: 0
   },
   {
-    url: "https://s3-us-west-1.amazonaws.com/hr-mytunes/data/03+Age+Ain%27t+Nothing+But+A+Number.mp3",
-    title: "Age Ain't Nothing But A Number",
-    artist: "Aaliyah",
+    url: "http://www.mercygaming.com/temp/EarthPeople.mp3",
+    title: "Earth People",
+    artist: "Dr. Octogon",
     played: 0
   },
   {
-    url: "https://s3-us-west-1.amazonaws.com/hr-mytunes/data/05+Hot+Like+Fire.mp3",
-    title: "Hot Like Fire",
-    artist: "Aaliyah",
+    url: "http://www.mercygaming.com/temp/NextMovement.mp3",
+    title: "The Next Movement",
+    artist: "The Roots",
     played: 0
   },
   {
-    url: "https://s3-us-west-1.amazonaws.com/hr-mytunes/data/06+If+Your+Girl+Only+Knew.mp3",
-    title: "If Your Girl Only Knew",
-    artist: "Aaliyah",
+    url: "http://www.mercygaming.com/temp/KrazyWitDaBooks.mp3",
+    title: "Krazy Wit Da Books",
+    artist: "DAS EFX",
+    played: 0
+  },
+  {
+    url: "http://www.mercygaming.com/temp/Oh%20No.mp3",
+    title: "Oh No!",
+    artist: "Mos Def",
+    played: 0
+  },
+  {
+    url: "http://www.mercygaming.com/temp/QualityControl.mp3",
+    title: "Quality Control",
+    artist: "Jurassic 5",
     played: 0
   }
 ];
