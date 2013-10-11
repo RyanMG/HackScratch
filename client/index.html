@@ -3,15 +3,8 @@
   <head>
   </head>
     <link rel="stylesheet" href="bower_components/normalize-css/normalize.css">
-<!--    <link rel="stylesheet" href="css/styles.css">
-    // <script id="libraryViewTemplate" type="text/template">
-    //    <span class="song-artist"><%= artist %>  </span>
-    //    <span class="song-title"><%= title %></span>
-    //  <div class="playCount">
-    //     <p><%= played %></p>
-    //   </div>
-    // </script>
--->
+    <link rel="stylesheet" href="css/styles.css">
+
     <script src="bower_components/jquery/jquery.min.js"></script>
     <script src="bower_components/underscore/underscore.js"></script>
     <script src="bower_components/backbone/backbone.js"></script>
@@ -28,6 +21,7 @@
     <script src="views/AppView.js"></script>
     <script src="views/SongQueueView.js"></script>
     <script src="views/SongQueueEntryView.js"></script>
+    <script src="routes/router.js"></script>
     <script>
       $(function(){
         // set up model objects
@@ -37,12 +31,14 @@
         // build a view for the top level of the whole app
         var appView = new AppView({model: app});
         var libraryView = new LibraryView({collection: app.get('library')});
-        var songQueueView = new SongQueueView({ collection: app.get('songQueue')})
+        var songQueueView = new SongQueueView({ collection: app.get('songQueue')});
+        var router = new Router({ library: library });
 
         // put the view onto the screen
         $('#play-controls').append(appView.render());
         $('#library-holder').append(libraryView.render());
         $('#playlist-holder').append(songQueueView.render());
+        Backbone.history.start();
       });
     </script>
   <body>

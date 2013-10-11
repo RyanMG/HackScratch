@@ -8,6 +8,12 @@ var LibraryEntryView = Backbone.View.extend({
 
   events: {
     'click': function() {
+      var myURL = document.location;
+      if (myURL.hash[0] !== '#') {
+        document.location = myURL + '#/playlist/' + this.model.get('id');
+      } else {
+        document.location = myURL + "/" + this.model.get('id');
+      }
       this.model.enqueue();
     }
   },
