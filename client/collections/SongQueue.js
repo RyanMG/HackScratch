@@ -1,5 +1,6 @@
 // SongQueue.js - Defines a backbone model class for the song queue.
 var SongQueue = Songs.extend({
+ 
   initialize: function(){
     if (window.localStorage.getItem('playQueue') !== undefined) {
       window.localStorage.setItem('playQueue', {});
@@ -10,13 +11,12 @@ var SongQueue = Songs.extend({
       if (this.length === 1) {
         $('#seven-inch > img').addClass('isPlaying');
         this.playFirst();
-
       }
-    });
+    }, this);
 
     this.on('dequeue', function(song) {
       this.remove(song);
-    });
+    }, this);
 
     this.on('ended', function(song){
       this.shift();
@@ -25,7 +25,7 @@ var SongQueue = Songs.extend({
       } else {
         $('#seven-inch > img').removeClass('isPlaying');
       }
-    });
+    }, this);
   },
 
   playFirst: function(){

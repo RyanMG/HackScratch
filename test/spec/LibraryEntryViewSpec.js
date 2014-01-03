@@ -8,7 +8,7 @@ describe('LibraryEntryView', function() {
       url: 'example/url'
     });
     spyOn(Song.prototype, 'enqueue'); // Uncomment this when working on the second test
-    spyOn(Song.prototype, 'play');
+    //spyOn(Song.prototype, 'play');
     view = new LibraryEntryView({model: model});
     view.render();
   });
